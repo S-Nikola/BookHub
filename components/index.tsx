@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import CustomFilter from "./CustomFilter";
 import SearchAuthor from "./SearchAuthor";
+import BookCard from "./BookCard";
+import BookDetails from "./BookDetails";
 
 export { 
   Hero, 
@@ -13,5 +15,7 @@ export {
   Footer,
   SearchBar,
   CustomFilter,
-  SearchAuthor
+  SearchAuthor,
+  BookCard,
+  BookDetails
 }

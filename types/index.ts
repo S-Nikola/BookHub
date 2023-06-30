@@ -10,3 +10,18 @@ export interface CustomButtonProps {
   rightIcon?: string;
   isDisabled?: boolean;
 }
+
+export interface SearchAuthorProps {
+  author: string;
+  setAuthor: (author: string) => void;
+}
+
+export interface BookProps {
+  authors: string[];
+  title: string;
+  language: string;
+  book_type: string;
+  copyright: number;
+  summary: string;
+  max_age: number;
+}
