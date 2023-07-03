@@ -19,9 +19,9 @@ export interface SearchAuthorProps {
 export interface BookProps {
   authors: string[];
   title: string;
-  language: string;
   book_type: string;
+  language: string;
   copyright: number;
-  summary: string;
   max_age: number;
+  summary: string;
 }
