@@ -11,17 +11,22 @@ export interface CustomButtonProps {
   isDisabled?: boolean;
 }
 
-export interface SearchAuthorProps {
-  author: string;
-  setAuthor: (author: string) => void;
+export interface SearchManufacturerProps {
+  manufacturer: string;
+  setManufacturer: (manufacturer: string) => void;
 }
 
-export interface BookProps {
-  authors: string[];
-  title: string;
-  book_type: string;
-  language: string;
-  copyright: number;
-  max_age: number;
-  summary: string;
+export interface CarProps {
+  city_mpg: number;
+  class: string;
+  combination_mpg: number;
+  cylinders: number;
+  displacement: number;
+  drive: string;
+  fuel_type: string;
+  highway_mpg: number;
+  make: string;
+  model: string;
+  transmission: string;
+  year: number; 
 }

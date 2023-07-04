@@ -1,42 +1,42 @@
 "use client"
 
-import { SearchAuthorProps } from '@/types'
+import { SearchManufacturerProps } from '@/types'
 import React from 'react';
 import { Combobox, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import { useState, Fragment } from 'react';
-import { authors } from '@/constants';
+import { manufacturers } from '@/constants';
 
-const SearchAuthor = ({ author, setAuthor }: SearchAuthorProps) => {
+const SearchManufacturers = ({ manufacturer, setManufacturer }: SearchManufacturerProps) => {
   const [query, setQuery] = useState('');
 
-  const filteredAuthors = 
+  const filteredManufacturers = 
     query === "" 
-      ? authors
-      : authors.filter((item) => (
+      ? manufacturers
+      : manufacturers.filter((item) => (
         item.toLowerCase()
         .replace(/\s+/g, "")
         .includes(query.toLowerCase().replace(/\s+/g, ""))
       ))
 
   return (
-    <div className='search-author'>
+    <div className='search-manufacturer'>
       <Combobox
-      value={author} onChange={setAuthor}>
+      value={manufacturer} onChange={setManufacturer}>
         <div className='relative w-full'>
           <Combobox.Button className='absolute top-[14px]'>
             <Image 
-              src="/author-logo.svg"
+              src="/car-logo.svg"
               width={20}
               height={20}
               className="ml-4"
-              alt="Author Logo"
+              alt="car Logo"
               />
           </Combobox.Button>
           <Combobox.Input
-            className="search-author__input"
-            placeholder="Author's name"
-            displayValue={(author: string) => author}
+            className="search-manufacturer__input"
+            placeholder="Manufacturer's name"
+            displayValue={(manufacturer: string) => manufacturer}
             onChange={(e) => setQuery(e.target.value)}
           />
 
@@ -48,12 +48,12 @@ const SearchAuthor = ({ author, setAuthor }: SearchAuthorProps) => {
           afterLeave={() => setQuery('')}
           >
             <Combobox.Options>
-              {filteredAuthors.map((item) => (
+              {filteredManufacturers.map((item) => (
                 <Combobox.Option
                 value={item}
                   key={item}
                   className={({ active }) => 
-                    `relative search-author__option ${active ? 'bg-primary-blue text-white': 'text-gray-900'}`}
+                    `relative search-manufacturer__option ${active ? 'bg-primary-blue text-white': 'text-gray-900'}`}
                 >
                   {({ selected, active })=> (
                     <>
@@ -79,4 +79,4 @@ const SearchAuthor = ({ author, setAuthor }: SearchAuthorProps) => {
   )
 }
 
-export default SearchAuthor
+export default SearchManufacturers

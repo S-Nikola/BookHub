@@ -1,10 +1,10 @@
 "use client";
 
-import SearchAuthor from "./SearchAuthor";
+import SearchManufacturer from "./SearchManufacturer";
 import { useState} from 'react';
 
 const SearchBar = () => {
-  const [ author, setAuthor ] = useState('')
+  const [ manufacturer, setManufacturer ] = useState('')
   
   // const handleSearch = () => {};
 
@@ -15,9 +15,9 @@ const SearchBar = () => {
     // onSubmit={handleSearch}
     >
       <div className="searchbar__item">
-        <SearchAuthor 
-          author={author}
-          setAuthor={setAuthor}
+        <SearchManufacturer 
+          manufacturer={manufacturer}
+          setManufacturer={setManufacturer}
         />
       </div>
     </form>

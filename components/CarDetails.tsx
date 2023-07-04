@@ -1,18 +1,18 @@
 "use client"
 
 import React from 'react'
-import { BookProps } from '@/types';
+import { CarProps } from '@/types';
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-interface BookDetailsProps {
+interface CarDetailsProps {
   isOpen: boolean;
   closeModal: () => void;
-  book: BookProps;
+  car: CarProps;
 }
 
-const BookDetails = ({ isOpen, closeModal, book }: BookDetailsProps) => {
+const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
   return (
     <>
     <Transition appear show={isOpen} as={Fragment}>
@@ -56,18 +56,18 @@ const BookDetails = ({ isOpen, closeModal, book }: BookDetailsProps) => {
                 </button>
                 <div className='flex-1 flex flex-col gap-3'>
                   <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
-                    <Image src="/hero-books.png" alt='Book Image' fill priority className='object-contain'></Image>
+                    <Image src="/hero.png" alt='Car Image' fill priority className='object-contain'></Image>
                   </div>
 
                   <div className='flex gap-3'>
                     <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                      <Image src="/hero-books.png" alt='Book Image' fill priority className='object-contain'></Image>
+                      <Image src="/hero.png" alt='Car Image' fill priority className='object-contain'></Image>
                     </div>
                     <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                      <Image src="/hero-books.png" alt='Book Image' fill priority className='object-contain'></Image>
+                      <Image src="/hero.png" alt='Car Image' fill priority className='object-contain'></Image>
                     </div>
                     <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                      <Image src="/hero-books.png" alt='Book Image' fill priority className='object-contain'></Image>
+                      <Image src="/hero.png" alt='Car Image' fill priority className='object-contain'></Image>
                     </div>
                   </div>
 
@@ -75,11 +75,11 @@ const BookDetails = ({ isOpen, closeModal, book }: BookDetailsProps) => {
 
                 <div className='flex-1 flex flex-full gap-2'>
                   <h2 className='flex font-semibold text-xl capitalize'>
-                    {book.title}
+                    {car.make} {car.model}
                   </h2>
                   
                   <div className='mt-3 flex flex-wrap gap-4'>
-                    <p>Summary: {book.summary}</p>
+                    <p>Details:</p>
                   </div>
                 </div>
               </Dialog.Panel>
@@ -93,4 +93,4 @@ const BookDetails = ({ isOpen, closeModal, book }: BookDetailsProps) => {
   )
 }
 
-export default BookDetails
+export default CarDetails
